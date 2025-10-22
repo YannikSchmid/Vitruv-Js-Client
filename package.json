@@ -1,0 +1,35 @@
+{
+    "name": "vitruv-js-client",
+    "type": "module",
+    "packageManager": "yarn@4.5.3",
+    "main": "dist/cjs/index.cjs",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/cjs/index.cjs",
+            "import": "./dist/esm/index.js",
+            "types": "./dist/types/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build:esm": "tsc --project tsconfig.json",
+        "build:cjs": "tsc --project tsconfig.cjs.json",
+        "build": "yarn build:esm && yarn build:cjs",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage"
+    },
+    "files": [
+        "dist"
+    ],
+    "devDependencies": {
+        "@types/jest": "^30.0.0",
+        "@types/node": "^24.5.2",
+        "jest": "^30.1.3",
+        "ts-jest": "^29.4.4",
+        "tsx": "^4.20.5",
+        "typescript": "^5.9.2"
+    },
+    "dependencies": {}
+}
